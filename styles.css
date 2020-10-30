@@ -1,0 +1,151 @@
+.selectpicker {
+    width: 150px;
+    background-color: #8f8f8f;
+}
+
+.btn {
+    margin: auto 10px;
+}
+
+/* tag selector */
+
+body {
+    /* change whole page font */
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1.5;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 1.5;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+p {
+    color: #8f8f8f;
+}
+
+/* class selector */
+
+.container-fluid {
+    padding: 3% 15%;
+}
+
+/* id selector */
+
+#title {
+    background-color: #ff4c68;
+    color: #fff;
+}
+
+/* <!-- Nav Bar --> */
+
+.navbar-brand {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+.navbar {
+    padding-left: 0;
+    padding-bottom: 4.5rem;
+}
+
+.nav-item {
+    padding: 0 18px;
+}
+
+.nav-link {
+    font-size: 1.2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+/* body {
+    box-sizing: border-box;
+    padding: 20px;
+    background: #333;
+    margin: 0 auto;
+    width: 100%;
+} */
+
+#svg-container {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+svg {
+    /* width: 100%; */
+    background: white;
+    display: block;
+    margin: 0 auto;
+    height: 500px;
+    /* width: 1000px; */
+}
+
+rect {
+    animation: fill-in 1000ms alternate;
+    fill: cadetblue;
+    opacity: 100%;
+    stroke-width: 1px;
+    stroke: #fff;
+}
+
+rect:hover {
+    fill: sandybrown;
+    /* fill: darksalmon; */
+    opacity: 50%;
+}
+
+@keyframes fill-sorted {
+    0% {
+        fill: antiquewhite;
+    }
+    50% {
+        fill: #e6a4b4;
+    }
+    100% {
+        fill: #c86b85;
+    }
+}
+
+/* The animation code */
+
+@keyframes fill-in {
+    0% {
+        fill: antiquewhite;
+    }
+    50% {
+        fill: lightblue;
+    }
+    100% {
+        fill: cadetblue;
+    }
+}
+
+.rect-sorted {
+    animation: fill-sorted 1000ms alternate;
+    fill: #c86b85;
+    /* opacity: 80%; */
+    stroke-width: 1px;
+    stroke: #fff;
+}
+
+input, button {
+    display: block;
+    margin: 10px auto;
+}
