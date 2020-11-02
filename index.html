@@ -54,8 +54,15 @@
         </div>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
             <div class="slidecontainer">
-                <input type="range" min="50" max="500" value="100" class="slider">
+                <span id="speed-slider-text">Speed</span>
+                <input type="range" min="5" max="30" value="10" class="slider" id="speed">
+            </div>
+
+            <div class="slidecontainer">
+                <span id="data-slider-text">Data</span>
+                <input type="range" min="50" max="500" value="100" class="slider" id="data">
             </div>
             <button class="btn btn-outline-secondary my-2 my-sm-0 shuffle" type="submit">Shuffle</button>
             <button class="btn btn-outline-success my-2 my-sm-0 run" type="submit">Run</button>
@@ -69,6 +76,9 @@
     so that we only manipulate HTML after they've been loaded and rendered-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="helper.js"></script>
+    <script type="text/javascript" src="selection_sort.js"></script>
+
 </body>
 
 </html>

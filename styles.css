@@ -74,6 +74,14 @@ p {
     font-weight: 300;
 }
 
+#speed-slider-text, #data-slider-text {
+    color: #fff;
+}
+
+.slider {
+    display: inline;
+}
+
 /* body {
     box-sizing: border-box;
     padding: 20px;
@@ -105,10 +113,37 @@ rect {
     stroke: #fff;
 }
 
+.rect-selected {
+    animation: fill-selected 500ms alternate;
+    fill: sandybrown;
+    /* fill: darksalmon; */
+    opacity: 50%;
+}
+
+.rect-sorted {
+    animation: fill-sorted 1000ms alternate;
+    fill: #c86b85;
+    /* opacity: 80%; */
+    stroke-width: 1px;
+    stroke: #fff;
+}
+
 rect:hover {
     fill: sandybrown;
     /* fill: darksalmon; */
     opacity: 50%;
+}
+
+@keyframes fill-selected {
+    0% {
+        fill: antiquewhite;
+    }
+    50% {
+        fill: sandybrown;
+    }
+    100% {
+        fill: cadetblue;
+    }
 }
 
 @keyframes fill-sorted {
@@ -135,14 +170,6 @@ rect:hover {
     100% {
         fill: cadetblue;
     }
-}
-
-.rect-sorted {
-    animation: fill-sorted 1000ms alternate;
-    fill: #c86b85;
-    /* opacity: 80%; */
-    stroke-width: 1px;
-    stroke: #fff;
 }
 
 input, button {
