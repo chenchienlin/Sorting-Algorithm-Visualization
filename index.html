@@ -55,17 +55,21 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-            <div class="slidecontainer">
-                <span id="speed-slider-text">Speed</span>
-                <input type="range" min="5" max="30" value="10" class="slider" id="speed">
+            <div class="d-flex mr-4 slidecontainer">
+                <span class="mx-2 cyan-text" id="speed-slider-text">Speed </span>
+                <span class="mx-1 text-default" id="speed-slider-text">5 </span>
+                <input type="range" min="5" max="50" value="10" class="slider" id="speed">
+                <span class="mx-1 text-default" id="speed-slider-text">50 </span>
             </div>
 
-            <div class="slidecontainer">
-                <span id="data-slider-text">Data</span>
+            <div class="d-flex mr-4 slidecontainer">
+                <span class="mx-2" id="data-slider-text">Data</span>
+                <span class="mx-1 text-default" id="speed-slider-text">50 </span>
                 <input type="range" min="50" max="500" value="100" class="slider" id="data">
+                <span class="mx-1 text-default" id="speed-slider-text">500 </span>
             </div>
-            <button class="btn btn-outline-secondary my-2 my-sm-0 shuffle" type="submit">Shuffle</button>
-            <button class="btn btn-outline-success my-2 my-sm-0 run" type="submit">Run</button>
+            <button class="btn btn-outline-secondary mr-4 my-2 my-sm-0 shuffle" type="submit">Shuffle</button>
+            <button class="btn btn-outline-success mr-4 my-2 my-sm-0 run" type="submit">Run</button>
         </div>
     </nav>
     <div id="svg-container">
