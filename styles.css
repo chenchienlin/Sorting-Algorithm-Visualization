@@ -78,14 +78,6 @@ p {
     color: #fff;
 }
 
-/* body {
-    box-sizing: border-box;
-    padding: 20px;
-    background: #333;
-    margin: 0 auto;
-    width: 100%;
-} */
-
 #svg-container {
     width: 100%;
     position: absolute;
@@ -110,10 +102,10 @@ rect {
 }
 
 .rect-selected {
-    animation: fill-selected 500ms alternate;
+    /* animation: fill-selected alternate; */
     fill: sandybrown;
     /* fill: darksalmon; */
-    opacity: 50%;
+    opacity: 80%;
 }
 
 .rect-sorted {

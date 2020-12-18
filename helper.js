@@ -1,31 +1,46 @@
+async function delay(speed) {
+  return new Promise(resolve => setTimeout(resolve, speed));
+}
 
 function swap(arr, i, j){
-    temp = arr[i];
-    arr[i] = arr[j];
-    arr[j] = temp;
 
-    bari = document.getElementsByTagName("rect")[i];
-    barj = document.getElementsByTagName("rect")[j];
+  // swap values in array  
+  temp = arr[i];
+  arr[i] = arr[j];
+  arr[j] = temp;
 
-    bari.setAttribute('y', 500 - arr[i]);
-    bari.setAttribute('height', `${arr[i]}px`);
-
-    barj.setAttribute('y', 500 - arr[j]);
-    barj.setAttribute('height', `${arr[j]}px`);
+  // change rects attributes
+  bari = $("#rect" + i);
+  barj = $("#rect" + j);
+  bari.attr('y', 500 -arr[i]);
+  bari.attr('height', arr[i]);
+  barj.attr('y', 500 -arr[j]);
+  barj.attr('height', arr[j]);
 }
 
 
 // Knuth shuffle. 
 // This part of code can refer to Algorithms 4th Edition by Robert Sedgewick
-function shuffle(arr){
+// function shuffle(arr){
+//   let n = arr.length;
+//   for (let i = 0; i < n; i++){
+//     window.setTimeout(function() {
+//         let r = getRandom(0, n-1); // between 0 and i
+//         swap(arr, i, r);
+//         var temp1 = $("rect")[i];
+//         temp1.removeAttribute('class', 'rect-sorted');
+//       }, i * 500*1/n); 
+//   }
+
+// }
+
+async function shuffle(arr, speed){
   let n = arr.length;
   for (let i = 0; i < n; i++){
-    window.setTimeout(function() {
-        let r = getRandom(0, n-1); // between 0 and i
-        swap(arr, i, r);
-        var temp1 = $("rect")[i];
-        temp1.removeAttribute('class', 'rect-sorted');
-      }, i * 500*1/n); 
+    let r = getRandom(0, n-1); // between 0 and i
+    await delay(speed);
+    swap(arr, i, r);
+    var temp1 = $("rect")[i];
+    temp1.removeAttribute('class', 'rect-sorted');
   }
-
 }

@@ -9,7 +9,6 @@ function getRandom(min,max){
     return Math.floor(Math.random()*(max-min+1))+min;
 };
 
-
 function generateData(n){
   chartData = Array(n);
   for (var i = 0; i < n; i++){
@@ -34,15 +33,29 @@ function plotData(chartData, width){
 generateData(n);
 plotData(chartData, width);
 
-$(".run").on("click", function(){
+$(".run").on("click", function() {
   var val = document.getElementById("select-box").value;
-  if (val == "1"){
+  if (val == "1") {
     selection(chartData, speed);  
   }
+  else if (val == "2") {
+    insertion(chartData, speed);  
+  }
+
+
 })
 
 $(".shuffle").on("click", function(){
-    shuffle(chartData);  
+
+  // clear all setTimeout
+  // This part of code is from 
+  // https://stackoverflow.com/questions/8860188/javascript-clear-all-timeouts/8860203
+  var id = window.setTimeout(function() {}, 0);
+  while (id--) {
+    window.clearTimeout(id);
+  }
+  
+  shuffle(chartData, speed/10);  
 })
 
 var rangeInput = $("#data")[0];
@@ -63,7 +76,6 @@ var speedInput = $("#speed")[0];
 speedInput.addEventListener("change", function() { // add EventListener to number slider 
   speed = speedInput.value;
 }, false);
-
 
 // Detect viewport change
 $(window).resize(function() {
