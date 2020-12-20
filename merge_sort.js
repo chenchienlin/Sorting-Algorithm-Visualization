@@ -42,6 +42,7 @@ async function merge(arr, aux, lo, mid, hi, speed) {
         
         auxi = aux[i];
         auxj = aux[j];
+<<<<<<< HEAD
         await selectedAnimation(i, j, speed);
 
         if (i > mid) {
@@ -67,6 +68,29 @@ async function merge(arr, aux, lo, mid, hi, speed) {
             changeBarData(arr, k);
             if (lo == 0 && hi == arr.length - 1) sortedAnimation(i, j);
             i++;
+=======
+        await selectAnimation(i, j, speed);
+
+        if (i > mid) {
+            arr[k] = aux[j];
+            j++;
+            changeBarData(arr, k);
+        }
+        else if (j > hi) {
+            arr[k] = aux[i];
+            i++;
+            changeBarData(arr, k);
+        }
+        else if (aux[j] < aux[i]) {
+            arr[k] = aux[j];
+            j++;
+            changeBarData(arr, k);
+        }
+        else {
+            arr[k] = aux[i];
+            i++;
+            changeBarData(arr, k);
+>>>>>>> ff02e4f9df0c241bb03646e41d9d2fb704963338
         }
     }
 }
@@ -80,7 +104,11 @@ function changeBarData(arr, k) {
     selectedBar.attr('height', arr[k]);
 }
 
+<<<<<<< HEAD
 async function selectedAnimation(i, j, speed) {
+=======
+async function selectAnimation(i, j, speed) {
+>>>>>>> ff02e4f9df0c241bb03646e41d9d2fb704963338
     
     var numi = "rect" + i;
     var numj = "rect" + j;
@@ -95,6 +123,7 @@ async function selectedAnimation(i, j, speed) {
     selectedBari.removeClass("rect-selected");
     selectedBarj.removeClass("rect-selected");
 
+<<<<<<< HEAD
 }
 
 function sortedAnimation(i, j) {
@@ -106,4 +135,6 @@ function sortedAnimation(i, j) {
 
     selectedBari.addClass("rect-sorted"); // colored selected rect
     selectedBarj.addClass("rect-sorted"); // colored selected rect
+=======
+>>>>>>> ff02e4f9df0c241bb03646e41d9d2fb704963338
 }
