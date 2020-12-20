@@ -3,6 +3,7 @@ let n = $("#data")[0].value; // slider value
 let speed = $("#speed")[0].value; // slider value
 
 let width = $("#svg").width();
+let height = $("#svg").height(); // 450 px
 let chartData = new Array(n);
 
 function getRandom(min,max){
@@ -12,7 +13,7 @@ function getRandom(min,max){
 function generateData(n){
   chartData = Array(n);
   for (var i = 0; i < n; i++){
-      chartData[i] = getRandom(50, 500);
+      chartData[i] = getRandom(height/10, height); // values from 45 to 450 
   }
 }
 
@@ -21,12 +22,12 @@ function plotData(chartData, width){
   setTimeout(() => {
     var bar = document.createElementNS("http://www.w3.org/2000/svg", "rect");
     bar.setAttribute('x', i * (width / n));
-    bar.setAttribute('y', 500 - data);
+    bar.setAttribute('y', height - data);
     bar.setAttribute('height', `${data}px`);
     bar.setAttribute('width', `${width / n}px`);
     bar.setAttribute('id', "rect" + i);
     svg.appendChild(bar);
-    }, i * 500*1/n);
+    }, i * speed);
   });
 }
 
@@ -42,20 +43,12 @@ $(".run").on("click", function() {
     insertion(chartData, speed);
   }
   else if (val == '3') {
-    mergesort(chartData, speed);  
+    mergesort(chartData, speed);
   }
 })
 
 $(".shuffle").on("click", function(){
-
-  // clear all setTimeout
-  // This part of code is from 
-  // https://stackoverflow.com/questions/8860188/javascript-clear-all-timeouts/8860203
-  var id = window.setTimeout(function() {}, 0);
-  while (id--) {
-    window.clearTimeout(id);
-  }
-  
+  clearsetTimeout();
   shuffle(chartData, speed/10);  
 })
 

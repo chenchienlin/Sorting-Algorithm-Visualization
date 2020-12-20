@@ -1,9 +1,11 @@
+
 async function delay(speed) {
   return new Promise(resolve => setTimeout(resolve, speed));
 }
 
 function swap(arr, i, j){
 
+  let height = $("#svg").height(); // 450 px
   // swap values in array  
   temp = arr[i];
   arr[i] = arr[j];
@@ -12,12 +14,21 @@ function swap(arr, i, j){
   // change rects attributes
   bari = $("#rect" + i);
   barj = $("#rect" + j);
-  bari.attr('y', 500 -arr[i]);
+  bari.attr('y', height -arr[i]);
   bari.attr('height', arr[i]);
-  barj.attr('y', 500 -arr[j]);
+  barj.attr('y', height -arr[j]);
   barj.attr('height', arr[j]);
 }
 
+function clearsetTimeout() {
+  // clear all setTimeout
+  // This part of code is from 
+  // https://stackoverflow.com/questions/8860188/javascript-clear-all-timeouts/8860203
+  var id = window.setTimeout(function() {}, 0);
+  while (id--) {
+    window.clearTimeout(id);
+  }
+}
 
 // Knuth shuffle. 
 // This part of code can refer to Algorithms 4th Edition by Robert Sedgewick

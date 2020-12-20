@@ -21,6 +21,7 @@ async function mergesort(arr, speed) {
 }
 
 async function mergesortRecursive(arr, aux, lo, hi, speed) {
+
     if (hi > lo) {
         // debugger;
         var mid = Math.floor((lo + hi)/2);
@@ -72,11 +73,13 @@ async function merge(arr, aux, lo, mid, hi, speed) {
 }
 
 function changeBarData(arr, k) {
-    
+
+    let height = $("#svg").height(); // 450 px
+
     // select a rect
     var num = "rect" + k;
     selectedBar = $("#" + num);
-    selectedBar.attr('y', 500 - arr[k]);
+    selectedBar.attr('y', height - arr[k]);
     selectedBar.attr('height', arr[k]);
 }
 
@@ -98,6 +101,7 @@ async function selectedAnimation(i, j, speed) {
 }
 
 function sortedAnimation(i, j) {
+    
     var numi = "rect" + i;
     var numj = "rect" + j;
 
