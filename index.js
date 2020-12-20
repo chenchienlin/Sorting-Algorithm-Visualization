@@ -1,6 +1,5 @@
 svg = document.getElementsByTagName("svg")[0];
 let n = $("#data")[0].value; // slider value
-// let n = 5;
 let speed = $("#speed")[0].value; // slider value
 
 let width = $("#svg").width();
@@ -16,20 +15,6 @@ function generateData(n){
       chartData[i] = getRandom(50, 500);
   }
 }
-// function generateData(n){
-//   chartData = Array(n);
-//   // var c = 1;  
-//   var k = 0;
-//   for (var i = 0; i < n; i=i+2){
-//       chartData[k++] = 50*(i+1);
-//   }
-
-//   for (var i = 1; i < n; i=i+2){
-//       chartData[k++] = 50*(i+1);
-
-//   }
-// }
-
 
 function plotData(chartData, width){
  chartData.forEach((data, i) => {
