@@ -101,7 +101,7 @@ async function selectedAnimation(i, j, speed) {
 }
 
 function sortedAnimation(i, j) {
-    
+
     var numi = "rect" + i;
     var numj = "rect" + j;
 

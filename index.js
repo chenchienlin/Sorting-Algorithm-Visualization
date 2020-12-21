@@ -45,6 +45,9 @@ $(".run").on("click", function() {
   else if (val == '3') {
     mergesort(chartData, speed);
   }
+  else if (val == '4') {
+    quicksort(chartData, speed);
+  }
 })
 
 $(".shuffle").on("click", function(){

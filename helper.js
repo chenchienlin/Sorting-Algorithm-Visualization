@@ -55,3 +55,15 @@ async function shuffle(arr, speed){
     temp1.removeAttribute('class', 'rect-sorted');
   }
 }
+
+function sortedAnimation(i, j) {
+
+    var numi = "rect" + i;
+    var numj = "rect" + j;
+
+    selectedBari = $("#" + numi);
+    selectedBarj = $("#" + numj);
+
+    selectedBari.addClass("rect-sorted"); // colored selected rect
+    selectedBarj.addClass("rect-sorted"); // colored selected rect
+}
