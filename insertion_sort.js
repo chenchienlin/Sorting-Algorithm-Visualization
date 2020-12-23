@@ -14,15 +14,20 @@ async function slide(arr, loc, speed) {
     
     while (j > 0 && arr[j-1] > temp){
         await findInsertSpotAnimation(j, speed);
-        arr[j] = arr[j-1];
-        barj = $("#rect" + j);
-        barj.attr('y', 500 -arr[j]);
-        barj.attr('height', arr[j]);
+        sildeAnimation(j)
         j--;
     }
     arr[j] = temp;
     barj = $("#rect" + j);
     barj.attr('y', 500 -arr[j]);
+    barj.attr('height', arr[j]);
+}
+
+async function sildeAnimation(j) {
+    let height = $("#svg").height();
+    arr[j] = arr[j-1];
+    barj = $("#rect" + j);
+    barj.attr('y', height -arr[j]);
     barj.attr('height', arr[j]);
 }
 

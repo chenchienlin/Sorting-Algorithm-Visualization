@@ -1,16 +1,3 @@
-function domerge(arr) {
-    
-    let lo = 0;
-    let hi = arr.length - 1;
-    let mid = Math.floor((lo + hi)/2);
-    let aux = Array(arr.length);
-
-    for (let k = lo; k <= hi; k++) {
-        aux[k] = arr[k];
-    }
-    merge(arr, aux, lo, mid, hi, speed);
-}
-
 async function mergesort(arr, speed) {
     
     var lo = 0;
@@ -23,7 +10,6 @@ async function mergesort(arr, speed) {
 async function mergesortRecursive(arr, aux, lo, hi, speed) {
 
     if (hi > lo) {
-        // debugger;
         var mid = Math.floor((lo + hi)/2);
         await mergesortRecursive(arr, aux, lo, mid, speed);
         await mergesortRecursive(arr, aux, mid+1, hi, speed);
@@ -43,31 +29,32 @@ async function merge(arr, aux, lo, mid, hi, speed) {
         
         auxi = aux[i];
         auxj = aux[j];
-        await selectedAnimation(i, j, speed);
+        debugger;
+        await mergesortSelectedAnimation(i, j, speed);
 
         if (i > mid) {
             arr[k] = aux[j];
             changeBarData(arr, k);
-            if (lo == 0 && hi == arr.length - 1) sortedAnimation(i, j);
             j++;
+            if (lo == 0 && hi == arr.length - 1) sortedAnimation(i, j);
         }
         else if (j > hi) {
             arr[k] = aux[i];
             changeBarData(arr, k);
-            if (lo == 0 && hi == arr.length - 1) sortedAnimation(i, j);
             i++;
+            if (lo == 0 && hi == arr.length - 1) sortedAnimation(i, j);
         }
         else if (aux[j] < aux[i]) {
             arr[k] = aux[j];
             changeBarData(arr, k);
-            if (lo == 0 && hi == arr.length - 1) sortedAnimation(i, j);
             j++;
+            if (lo == 0 && hi == arr.length - 1) sortedAnimation(i, j);
         }
         else {
             arr[k] = aux[i];
             changeBarData(arr, k);
-            if (lo == 0 && hi == arr.length - 1) sortedAnimation(i, j);
             i++;
+            if (lo == 0 && hi == arr.length - 1) sortedAnimation(i, j);
         }
     }
 }
@@ -83,8 +70,8 @@ function changeBarData(arr, k) {
     selectedBar.attr('height', arr[k]);
 }
 
-async function selectedAnimation(i, j, speed) {
-    
+async function mergesortSelectedAnimation(i, j, speed) {
+    debugger;
     var numi = "rect" + i;
     var numj = "rect" + j;
 

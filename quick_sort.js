@@ -3,9 +3,10 @@ async function partition(arr, lo, hi, speed) {
     let p = lo; // assign low as pivot element
 
     for (let i = lo+1; i <= hi; i++) {
+        // debugger;
         if (arr[lo] > arr[i]) {
             p++;
-            await selectedAnimation(p, speed);
+            await quicksortSelectedAnimation(p, speed);
             swap(arr, p, i);
         }
     }
@@ -34,7 +35,7 @@ async function quicksort(arr, speed) {
 /* Select pivot element
  * 
  */
-async function selectedAnimation(p, speed) {
+async function quicksortSelectedAnimation(p, speed) {
     
     var nump = "rect" + p;
 
