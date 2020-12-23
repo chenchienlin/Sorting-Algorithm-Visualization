@@ -9,27 +9,24 @@ async function insertion(arr, speed) {
 
 // slide(chartData, 2, 200);
 async function slide(arr, loc, speed) {
+    let height = $("#svg").height();
     var temp = arr[loc];
     var j = loc;
     
     while (j > 0 && arr[j-1] > temp){
         await findInsertSpotAnimation(j, speed);
-        sildeAnimation(j)
+        arr[j] = arr[j-1];
+        barj = $("#rect" + j);
+        barj.attr('y', height -arr[j]);
+        barj.attr('height', arr[j]);
         j--;
     }
     arr[j] = temp;
     barj = $("#rect" + j);
-    barj.attr('y', 500 -arr[j]);
-    barj.attr('height', arr[j]);
-}
-
-async function sildeAnimation(j) {
-    let height = $("#svg").height();
-    arr[j] = arr[j-1];
-    barj = $("#rect" + j);
     barj.attr('y', height -arr[j]);
     barj.attr('height', arr[j]);
 }
+
 
 async function findInsertSpotAnimation(j, speed) {
     
