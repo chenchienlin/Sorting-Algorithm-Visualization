@@ -6,6 +6,15 @@ let width = $("#svg").width();
 let height = $("#svg").height(); // 450 px
 let chartData = new Array(n);
 
+let pq = new MinHeap();
+pq.insert(1);
+pq.insert(-1);
+pq.insert(2);
+pq.insert(-2);
+pq.insert(0);
+pq.insert(10);
+
+
 function getRandom(min,max){
     return Math.floor(Math.random()*(max-min+1))+min;
 };
