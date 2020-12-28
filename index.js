@@ -6,15 +6,6 @@ let width = $("#svg").width();
 let height = $("#svg").height(); // 450 px
 let chartData = new Array(n);
 
-let pq = new MinHeap();
-pq.insert(1);
-pq.insert(-1);
-pq.insert(2);
-pq.insert(-2);
-pq.insert(0);
-pq.insert(10);
-
-
 function getRandom(min,max){
     return Math.floor(Math.random()*(max-min+1))+min;
 };
@@ -57,6 +48,10 @@ $(".run").on("click", function() {
   else if (val == '4') {
     quicksort(chartData, speed);
   }
+  else if (val == '5') {
+    pq = new MinHeap(chartData);
+    pq.heapSort(speed);
+  }
 })
 
 $(".shuffle").on("click", function(){
@@ -91,3 +86,5 @@ $(window).resize(function() {
     svg.children[i].setAttribute('width', `${width / n}px`);
   }
 });
+
+let pq = new MinHeap(chartData);
