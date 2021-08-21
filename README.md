@@ -7,5 +7,5 @@ This is a project to practice front-end technology, such as HTML, CSS, JavaScrip
 - Bootstrap
 - jQuery
 
-## Getting Started
+## Usage
 You can play with it by visiting https://chenchienlin.github.io/Sorting-Algorithm-Visualization/
