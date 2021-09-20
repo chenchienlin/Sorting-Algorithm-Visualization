@@ -1,0 +1,23 @@
+{
+  "name": "sorting-algorithm-visualization",
+  "version": "1.0.0",
+  "description": "## About The Project This project is for practicing front-end technology, such as HTML, CSS, JavaScript, and also common sorting algorithms.",
+  "main": "index.js",
+  "scripts": {
+    "frontend": "http-server . -p 3000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/x91003502/Sorting-Algorithm-Visualization.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/x91003502/Sorting-Algorithm-Visualization/issues"
+  },
+  "homepage": "https://github.com/x91003502/Sorting-Algorithm-Visualization#readme",
+  "devDependencies": {
+    "http-server": "^13.0.2"
+  }
+}
