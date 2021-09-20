@@ -7,5 +7,19 @@ This project is for practicing front-end technology, such as HTML, CSS, JavaScri
 - Bootstrap
 - jQuery
 
+## Getting Start
+
+```
+npm init -y 
+npm install
+```
+
 ## Usage
-You can play with it by visiting https://chenchienlin.github.io/Sorting-Algorithm-Visualization/
+Run HTTP Server on localhost on port 3000.
+
+```
+npm run frontend
+```
+
+You can also play with it by visiting [Sorting-Algorithm-Visualization](https://chenchienlin.github.io/Sorting-Algorithm-Visualization/).
+
