@@ -22,4 +22,3 @@ npm run frontend
 ```
 
 You can also play with it by visiting [Sorting-Algorithm-Visualization](https://chenchienlin.github.io/Sorting-Algorithm-Visualization/).
-
