@@ -1,4 +1,6 @@
 node {
+    git url: 'https://github.com/chenchienlin/Sorting-Algorithm-Visualization.git/',
+    branch: 'master'
     def commit_id
     def app
     stage('Preparation') {
